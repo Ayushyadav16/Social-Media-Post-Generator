@@ -1,0 +1,128 @@
+2026-07-09 14:17:28,599 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: dQw4w9WgXcQ
+2026-07-09 14:17:40,665 - YouTubeGenerator - ERROR - Error fetching oEmbed metadata for dQw4w9WgXcQ: HTTPSConnectionPool(host='www.youtube.com', port=443): Max retries exceeded with url: /oembed?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ&format=json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000019935771670>: Failed to resolve 'www.youtube.com' ([Errno 11001] getaddrinfo failed)"))
+2026-07-09 14:32:47,743 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:33:01,637 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:39:24,992 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:39:25,746 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:41:10,285 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:41:12,013 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:41:21,611 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:41:22,551 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:41:50,712 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:41:54,622 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:42:10,349 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:42:14,080 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:42:14,849 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:42:15,721 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:42:15,727 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 14:42:15,730 - YouTubeGenerator - WARNING - Could not list transcripts for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'list_transcripts'
+2026-07-09 14:42:15,732 - YouTubeGenerator - ERROR - Error fetching transcript for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'
+2026-07-09 14:47:50,788 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:47:51,644 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:48:02,594 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:48:04,045 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:48:07,086 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:48:08,851 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:48:08,857 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 14:48:08,858 - YouTubeGenerator - WARNING - Could not list transcripts for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'list_transcripts'
+2026-07-09 14:48:08,859 - YouTubeGenerator - ERROR - Error fetching transcript for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'
+2026-07-09 14:49:39,682 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: dQw4w9WgXcQ
+2026-07-09 14:49:42,301 - YouTubeGenerator - INFO - Found manually created English transcript.
+2026-07-09 14:49:42,567 - YouTubeGenerator - ERROR - Error fetching transcript for dQw4w9WgXcQ: 'FetchedTranscriptSnippet' object has no attribute 'get'
+2026-07-09 14:53:18,617 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: dQw4w9WgXcQ
+2026-07-09 14:53:21,574 - YouTubeGenerator - INFO - Found manually created English transcript.
+2026-07-09 14:53:21,784 - YouTubeGenerator - INFO - Successfully loaded transcript for dQw4w9WgXcQ. Word count: 487
+2026-07-09 14:53:51,664 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: dQw4w9WgXcQ
+2026-07-09 14:53:53,375 - YouTubeGenerator - INFO - Found manually created English transcript.
+2026-07-09 14:53:53,593 - YouTubeGenerator - INFO - Successfully loaded transcript for dQw4w9WgXcQ. Word count: 487
+2026-07-09 14:58:25,199 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:58:38,269 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:59:03,826 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:59:04,537 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:59:04,542 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 14:59:04,543 - YouTubeGenerator - WARNING - Could not list transcripts for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'list_transcripts'
+2026-07-09 14:59:04,543 - YouTubeGenerator - ERROR - Error fetching transcript for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'
+2026-07-09 14:59:25,654 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:59:26,738 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:59:26,744 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 14:59:26,748 - YouTubeGenerator - WARNING - Could not list transcripts for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'list_transcripts'
+2026-07-09 14:59:26,750 - YouTubeGenerator - ERROR - Error fetching transcript for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'
+2026-07-09 14:59:41,046 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:59:41,911 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 14:59:49,077 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 14:59:50,271 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:00:21,923 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:00:22,976 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:00:28,180 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:00:30,445 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:00:30,450 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 15:00:30,452 - YouTubeGenerator - WARNING - Could not list transcripts for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'list_transcripts'
+2026-07-09 15:00:30,453 - YouTubeGenerator - ERROR - Error fetching transcript for ZjsNcg9Y3yk: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'
+2026-07-09 15:04:27,633 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:04:29,670 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:04:33,230 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:04:34,635 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:04:34,642 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 15:04:37,961 - YouTubeGenerator - INFO - Found auto-generated transcript in language: Hindi (auto-generated)
+2026-07-09 15:04:38,380 - YouTubeGenerator - INFO - Successfully loaded transcript for ZjsNcg9Y3yk. Word count: 6755
+2026-07-09 15:04:38,383 - YouTubeGenerator - INFO - Initializing LLM: Provider=Google Gemini, Model=gemini-1.5-flash, Temp=0.7
+2026-07-09 15:04:44,216 - YouTubeGenerator - INFO - Executing Phase 1: Summarization and Analysis...
+2026-07-09 15:04:44,256 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-07-09 15:04:47,237 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-07-09 15:16:04,750 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:16:06,583 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:16:10,554 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:16:12,139 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:16:12,146 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 15:16:14,901 - YouTubeGenerator - INFO - Found auto-generated transcript in language: Hindi (auto-generated)
+2026-07-09 15:16:15,724 - YouTubeGenerator - INFO - Successfully loaded transcript for ZjsNcg9Y3yk. Word count: 6755
+2026-07-09 15:16:15,730 - YouTubeGenerator - INFO - Initializing LLM: Provider=Google Gemini, Model=gemini-1.5-flash, Temp=0.7
+2026-07-09 15:16:21,189 - YouTubeGenerator - INFO - Executing Phase 1: Summarization and Analysis...
+2026-07-09 15:16:21,230 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-07-09 15:16:23,760 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-09 15:20:32,916 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:20:35,449 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:20:39,761 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:20:42,885 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:20:42,892 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 15:20:48,971 - YouTubeGenerator - INFO - Found auto-generated transcript in language: Hindi (auto-generated)
+2026-07-09 15:20:49,361 - YouTubeGenerator - INFO - Successfully loaded transcript for ZjsNcg9Y3yk. Word count: 6755
+2026-07-09 15:20:49,366 - YouTubeGenerator - INFO - Initializing LLM: Provider=Google Gemini, Model=gemini-1.5-flash, Temp=0.7
+2026-07-09 15:20:54,895 - YouTubeGenerator - INFO - Executing Phase 1: Summarization and Analysis...
+2026-07-09 15:20:54,957 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-07-09 15:20:56,971 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-07-09 15:30:14,825 - asyncio - ERROR - Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Program Files\Python312\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-07-09 15:31:31,598 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:31:41,129 - YouTubeGenerator - ERROR - Error fetching oEmbed metadata for ZjsNcg9Y3yk: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-07-09 15:31:52,123 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:32:00,285 - YouTubeGenerator - ERROR - Error fetching oEmbed metadata for ZjsNcg9Y3yk: HTTPSConnectionPool(host='www.youtube.com', port=443): Read timed out. (read timeout=5)
+2026-07-09 15:32:00,290 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 15:32:13,663 - YouTubeGenerator - WARNING - Could not list transcripts for ZjsNcg9Y3yk: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-07-09 15:32:41,126 - YouTubeGenerator - ERROR - No subtitles or transcripts were found for this video in any language. (Video ID: ZjsNcg9Y3yk)
+2026-07-09 15:32:44,652 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:32:50,686 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:32:50,700 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 15:33:25,169 - YouTubeGenerator - INFO - Found auto-generated transcript in language: Hindi (auto-generated)
+2026-07-09 15:33:26,359 - YouTubeGenerator - INFO - Successfully loaded transcript for ZjsNcg9Y3yk. Word count: 6755
+2026-07-09 15:33:26,365 - YouTubeGenerator - INFO - Initializing LLM: Provider=Google Gemini, Model=gemini-1.5-flash, Temp=0.7
+2026-07-09 15:33:32,379 - YouTubeGenerator - INFO - Executing Phase 1: Summarization and Analysis...
+2026-07-09 15:33:32,423 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-07-09 15:33:35,224 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
+2026-07-09 15:40:35,531 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:40:37,436 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:40:41,703 - YouTubeGenerator - INFO - Fetching metadata from oEmbed for video ID: ZjsNcg9Y3yk
+2026-07-09 15:40:42,203 - YouTubeGenerator - INFO - Successfully retrieved metadata for: 'Antigravity 2.0 - Build an AI Agent & Sell for ₹50,000 - Hindi Video'
+2026-07-09 15:40:42,209 - YouTubeGenerator - INFO - Attempting to fetch transcript for video ID: ZjsNcg9Y3yk
+2026-07-09 15:40:46,551 - YouTubeGenerator - INFO - Found auto-generated transcript in language: Hindi (auto-generated)
+2026-07-09 15:40:46,890 - YouTubeGenerator - INFO - Successfully loaded transcript for ZjsNcg9Y3yk. Word count: 6755
+2026-07-09 15:40:46,895 - YouTubeGenerator - INFO - Initializing LLM: Provider=Google Gemini, Model=gemini-1.5-flash, Temp=0.7
+2026-07-09 15:40:49,016 - YouTubeGenerator - INFO - Executing Phase 1: Summarization and Analysis...
+2026-07-09 15:40:49,020 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-07-09 15:40:50,186 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent "HTTP/1.1 404 Not Found"
