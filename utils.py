@@ -1,5 +1,6 @@
 import re
 import requests
+import time
 from typing import Dict, Any, Optional, List
 from youtube_transcript_api import YouTubeTranscriptApi
 
@@ -60,41 +61,83 @@ def get_metadata(video_id: str) -> Dict[str, Any]:
 def fetch_transcript(video_id: str) -> str:
     """
     Downloads subtitles/transcript for a given video.
-    Concatenates timecoded segments into a continuous readable paragraph.
-    
-    Handles both older API (dict structures) and newer API (object/dataclass structure)
-    versions of youtube-transcript-api to prevent crashing.
+    Implements a robust 2-pass retry loop and a 5-tier translation fallback:
+      Tier 1: Fetch English transcript directly.
+      Tier 2: Find manually created English transcript.
+      Tier 3: Find auto-generated English transcript.
+      Tier 4: Auto-translate any manual/generated foreign transcript into English.
+      Tier 5: Fetch raw first available language.
+      
+    If completely failed, suggests supported languages instead of crashing.
     """
-    # Instantiate client API (required by version 1.2.4+)
     api = YouTubeTranscriptApi()
+    last_error = None
     
-    # Fetch segments
-    try:
-        # Try retrieving standard manual/generated transcripts (defaults to English first)
-        raw_segments = api.fetch(video_id)
-    except Exception:
-        # Fallback: List transcripts and grab the first available option
-        transcript_list = api.list(video_id)
-        # Try English manual, then English auto, then any language, translate to English
+    # 2-Pass Retry Loop
+    for attempt in range(1, 3):
         try:
-            chosen = transcript_list.find_manually_created_transcript(['en'])
-        except Exception:
-            try:
-                chosen = transcript_list.find_generated_transcript(['en'])
-            except Exception:
-                # Grab whatever language is available
-                chosen = next(iter(transcript_list))
-                
-        # Auto-translate to English if supported
-        if chosen.language_code != 'en' and chosen.is_translatable:
-            chosen = chosen.translate('en')
+            # Tier 1: Try fetching English directly (fast path)
+            raw_segments = api.fetch(video_id, languages=['en'])
+            return _clean_and_concat(raw_segments)
+        except Exception as e:
+            last_error = e
             
-        raw_segments = chosen.fetch()
-        
-    # Clean and concatenate lines
+        # Wait slightly on retry attempt
+        if attempt == 2:
+            time.sleep(1)
+            
+        # Tier 2-5: Try list available transcripts and fetch/translate
+        try:
+            transcript_list = api.list(video_id)
+            chosen = None
+            
+            try:
+                # Tier 2: Try manual English
+                chosen = transcript_list.find_manually_created_transcript(['en'])
+            except Exception:
+                try:
+                    # Tier 3: Try auto English
+                    chosen = transcript_list.find_generated_transcript(['en'])
+                except Exception:
+                    # Tier 4: Look for a translatable foreign language
+                    for t in transcript_list:
+                        if t.is_translatable:
+                            chosen = t.translate('en')
+                            break
+                    # Tier 5: Fall back to the absolute first language
+                    if not chosen:
+                        chosen = next(iter(transcript_list))
+                        
+            if chosen:
+                raw_segments = chosen.fetch()
+                return _clean_and_concat(raw_segments)
+        except Exception as inner_e:
+            last_error = inner_e
+
+    # Handle final failure and suggest available languages
+    try:
+        transcript_list = api.list(video_id)
+        available = [f"{t.language} ({t.language_code})" for t in transcript_list]
+        raise RuntimeError(
+            f"Could not load English transcript. "
+            f"Available languages for this video: {available}. "
+            f"Please choose a video with captions in one of these languages."
+        ) from last_error
+    except Exception as list_err:
+        if isinstance(list_err, RuntimeError):
+            raise list_err
+        raise RuntimeError(
+            "Subtitles are completely disabled for this video, or it is unavailable. "
+            "Please try a video with closed captions enabled."
+        ) from last_error
+
+def _clean_and_concat(raw_segments: List[Any]) -> str:
+    """
+    Helper function to clean time-coded segments and concatenate them.
+    Supports both dictionary outputs and newer FetchedTranscriptSnippet structures.
+    """
     clean_lines = []
     for segment in raw_segments:
-        # Read text field, checking both dict format and dataclass attribute format
         if isinstance(segment, dict):
             text = segment.get("text", "")
         else:
@@ -104,11 +147,10 @@ def fetch_transcript(video_id: str) -> str:
         if text:
             clean_lines.append(text)
             
-    # Join into a single continuous paragraph
     full_text = " ".join(clean_lines)
-    full_text = " ".join(full_text.split()) # normalize spaces
+    full_text = " ".join(full_text.split()) # Normalize spaces
     
     if not full_text:
-        raise ValueError("Transcript fetched was empty.")
+        raise ValueError("Transcript text resolved to empty.")
         
     return full_text

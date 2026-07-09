@@ -1,40 +1,41 @@
-# Simple and clean prompt templates for the Agentic AI content generator.
-# Designed to write naturally, avoid robotic clichés, and tailor copy per platform.
+# Prompts file supporting advanced Agentic AI behaviors:
+# Planning, Reflection, Evaluation, Diffs, and Report Generation.
 
-# General system guidelines to avoid robotic AI voice
 SYSTEM_GUIDELINES = """
-You write like a human.
+You write naturally, like an expert human copywriter.
 - NEVER use robotic clichés like "In this video...", "Unlock the power of...", "Here are key takeaways:", "A game-changer", "Revolutionize", "Furthermore", "In conclusion".
-- Write conversationally. Speak directly to the reader. Use formatting (like line breaks and short paragraphs) to make it highly readable.
+- Write conversationally. Adapt writing structures to match the specific audience and tone requested.
 """
 
 PLANNING_PROMPT = """
-You are an AI distribution agent. You have been asked to help a creator repurpose their video content.
+You are an AI planning agent. You have been asked to repurpose a video.
 Video Title: "{title}"
 Video Creator: "{creator}"
+Target Audience: {audience}
+Target Tone: {tone}
 
-Outline a short, 3-step action plan of how you will extract value from this video and adapt it for LinkedIn, Twitter/X, and Instagram.
+Draft a 3-step execution plan of how you will extract key insights from the transcript and shape them into custom content for this specific audience and tone.
 Write in the first person ("I will..."). Keep it under 100 words.
 """
 
 REFLECTION_PROMPT = """
-You are an AI analysis agent. You have been provided with the transcript of a video.
+You are an AI analysis agent. Reflect on this video transcript:
 Video Title: "{title}"
 
-Read the transcript and reflect on it:
-1. What is the core problem being solved?
-2. What are the 3 most important insights or takeaways?
-3. What is a key quote or memorable statement?
+Outline:
+1. Core problem discussed.
+2. Top 3 essential insights/lessons.
+3. 2 memorable direct quotes.
 
 Transcript:
 {transcript}
 
-Write a concise reflection detailing your findings. Keep it under 200 words.
+Keep your reflection concise (under 200 words).
 """
 
 SUMMARY_PROMPT = SYSTEM_GUIDELINES + """
-Based on the transcript and your reflection, write a clean 3-sentence summary of the video.
-Ensure it is engaging and directly tells the reader what the video is about.
+Based on the transcript reflection, write a clean 3-sentence summary of the video.
+Ensure it is engaging, direct, and hooks the reader.
 
 Reflection:
 {reflection}
@@ -42,11 +43,13 @@ Reflection:
 
 LINKEDIN_PROMPT = SYSTEM_GUIDELINES + """
 Create a LinkedIn post based on the video reflection.
+Target Audience: {audience}
+Target Tone: {tone}
+
 - Word count: 150-250 words.
-- Structure:
-  * A strong hook (e.g. a counter-intuitive statement, a question, or a bold claim).
-  * 3 bulleted key insights from the reflection (with spaces between bullets).
-  * A clear call-to-action (CTA) inviting comments or thoughts.
+- Include an attention-grabbing hook customized for {audience} in a {tone} tone.
+- Detail 3 structured, high-value bullet points showing key lessons.
+- End with a strong CTA that encourages discussion relevant to this audience.
 
 Reflection:
 {reflection}
@@ -54,24 +57,116 @@ Reflection:
 
 TWITTER_PROMPT = SYSTEM_GUIDELINES + """
 Create a high-impact Twitter/X thread based on the video reflection.
-- Length: exactly 5 tweets.
-- Tweet 1: Hook the reader (make them want to read the thread).
-- Tweets 2-4: Deliver 3 core insights or lessons from the reflection.
-- Tweet 5: Summary takeaway and a question to drive engagement (CTA).
-- Format each tweet clearly (e.g., "1/5", "2/5"...) and keep each tweet under 280 characters.
+Target Audience: {audience}
+Target Tone: {tone}
+
+- Create exactly 5 tweets, numbered clearly ("1/5", "2/5", etc.).
+- Tweet 1: A powerful hook tailored to {audience} using a {tone} tone.
+- Tweets 2-4: Core lessons and insights from the reflection, structured for readability.
+- Tweet 5: A summary takeaway and a CTA asking a question to drive comments.
+- Keep each tweet under 280 characters.
 
 Reflection:
 {reflection}
 """
 
 INSTAGRAM_PROMPT = SYSTEM_GUIDELINES + """
-Create a storytelling Instagram caption based on the video reflection.
-- Structure:
-  * Visual attention-grabbing hook.
-  * Short narrative story explaining the main idea.
-  * Clear call-to-action (CTA).
-  * 4-6 relevant hashtags at the bottom.
+Create an Instagram caption based on the video reflection.
+Target Audience: {audience}
+Target Tone: {tone}
+
+- Begin with a highly visual, eye-catching hook.
+- Tell a brief narrative story conveying the core message in a {tone} tone, appealing to {audience}.
+- Add a clear CTA.
+- Add 4-6 relevant hashtags at the bottom.
 
 Reflection:
 {reflection}
+"""
+
+# The Reviewer Prompt forces the model to return structured JSON evaluating each post
+REVIEWER_PROMPT = """
+You are an AI quality assurance agent. Evaluate the generated social media posts against the target audience and tone.
+Target Audience: {audience}
+Target Tone: {tone}
+
+Generated Content to Evaluate:
+---
+LINKEDIN:
+{linkedin}
+---
+TWITTER:
+{twitter}
+---
+INSTAGRAM:
+{instagram}
+---
+
+Provide a critique and assign a quality score (0 to 100) for each platform. 
+Explain exactly WHY the hook, hashtags, and CTA fit the audience and tone, or list weaknesses if they do not.
+
+You must respond ONLY with a valid JSON object matching the following structure. Do not include any explanations or extra text outside the JSON.
+
+JSON Structure:
+{{
+  "linkedin": {{
+    "score": 90,
+    "why_it_fits": "Explain why the hook, CTA, and tone fit the target audience",
+    "hook_critique": "Critique of the hook",
+    "cta_critique": "Critique of the CTA",
+    "hashtags_critique": "Critique of the hashtags (or note if N/A)",
+    "suggestions": "Specific bullet points for improvement, or 'None' if score is high"
+  }},
+  "twitter": {{
+    "score": 80,
+    "why_it_fits": "...",
+    "hook_critique": "...",
+    "cta_critique": "...",
+    "hashtags_critique": "...",
+    "suggestions": "..."
+  }},
+  "instagram": {{
+    "score": 95,
+    "why_it_fits": "...",
+    "hook_critique": "...",
+    "cta_critique": "...",
+    "hashtags_critique": "...",
+    "suggestions": "..."
+  }}
+}}
+"""
+
+# Prompt to improve a weak post
+IMPROVEMENT_PROMPT = SYSTEM_GUIDELINES + """
+You are an AI optimization agent. Rewrite the following post to make it stronger based on the provided critique.
+Platform: {platform}
+Target Audience: {audience}
+Target Tone: {tone}
+
+Original Post:
+{original_post}
+
+Critique & Suggestions:
+{suggestions}
+
+Rewrite this post completely, implementing all suggestions.
+Your output must contain ONLY the new rewritten post. Do not include preambles, explanations, or quotes around the output.
+"""
+
+# Prompt for the final AI Reflection Report
+REPORT_PROMPT = """
+You are a senior AI marketing strategist. Review the final generated social media assets and the critiques.
+Target Audience: {audience}
+Target Tone: {tone}
+
+Critiques and Scores:
+{critiques_json}
+
+Write a short executive reflection report. Summarize:
+1. **Strengths**: What does this content package do exceptionally well for {audience}?
+2. **Weaknesses**: What minor compromises were made?
+3. **Strategic Suggestions**: Tips for the creator to maximize engagement.
+4. **Final Confidence Rating**: Give an overall package rating (e.g. "90% - Recommended for publication").
+
+Keep the report concise, structured with clear markdown headings, and under 150 words.
 """
